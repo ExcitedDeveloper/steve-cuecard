@@ -2,7 +2,7 @@ import * as React from "react"
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid"
 
 const columns: GridColDef[] = [
-  { field: "id", headerName: "ID", width: 70 },
+  { field: "id", headerName: "ID", hide: true },
   { field: "firstName", headerName: "First name", width: 130 },
   { field: "lastName", headerName: "Last name", width: 130 },
   {
