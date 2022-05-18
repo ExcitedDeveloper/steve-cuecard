@@ -6,7 +6,7 @@ import CardList from "./CardList"
 
 const Content = () => {
   return (
-    <Container style={{ flex: 1 }}>
+    <Container style={{ flex: 1, padding: 0 }}>
       <CardList />
     </Container>
   )
