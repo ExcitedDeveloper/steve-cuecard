@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography"
 import { SxProps, Theme } from "@mui/material"
 import Button from "@mui/material/Button"
 
-const ResponsiveAppBar = ({ sx }: { sx: SxProps<Theme> }) => {
+const CardListFooter = ({ sx }: { sx: SxProps<Theme> }) => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -22,11 +22,11 @@ const ResponsiveAppBar = ({ sx }: { sx: SxProps<Theme> }) => {
     setAnchorElNav(null)
   }
 
-  const pages = ["File", "Options", "Help"]
+  const pages = ["New Card", "Edit Card", "Delete Card"]
 
   return (
     <AppBar position='static'>
-      <Container maxWidth='xl'>
+      <Container>
         <Toolbar disableGutters>
           <Box
             sx={{
@@ -90,11 +90,15 @@ const ResponsiveAppBar = ({ sx }: { sx: SxProps<Theme> }) => {
               </Button>
             ))}
           </Box>
-          <Box sx={{ width: 1 }}>
-            <Typography textAlign='center'>Untitled*</Typography>
-          </Box>
-          <Box sx={{ width: 1, position: "right" }}>
-            <Typography textAlign='right'>Card List</Typography>
+          <Box sx={{ width: 1, display: "flex", justifyContent: "right" }}>
+            <Button
+              sx={{
+                my: 2,
+                color: "white",
+              }}
+            >
+              Study
+            </Button>
           </Box>
         </Toolbar>
       </Container>
@@ -102,4 +106,4 @@ const ResponsiveAppBar = ({ sx }: { sx: SxProps<Theme> }) => {
   )
 }
 
-export default ResponsiveAppBar
+export default CardListFooter

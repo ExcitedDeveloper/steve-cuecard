@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 
 const Content = () => {
-  return <Container style={{ backgroundColor: "grey" }}></Container>
+  return <div style={{ backgroundColor: "teal", flex: 1 }}></div>
 }
 
 export default Content
