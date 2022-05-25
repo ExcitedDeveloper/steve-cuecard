@@ -1,5 +1,6 @@
-import * as React from "react"
+import React, { useEffect } from "react"
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid"
+import useConvert from "../utils/useConvert"
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", hide: true },
@@ -44,6 +45,18 @@ const rows = [
 ]
 
 export default function CardList() {
+  const { isLoading, data, error } = useConvert(
+    "C:\\Users\\Home\\Documents\\CueCard\\CSS.wcu"
+  )
+
+  useEffect(() => {
+    if (error) {
+      console.error("error", error)
+    } else if (!isLoading) {
+      console.log(`data`, data)
+    }
+  }, [isLoading, data, error])
+
   return (
     <div style={{ height: "100%", width: "100%" }}>
       <DataGrid rows={rows} columns={columns} pageSize={10} checkboxSelection />
